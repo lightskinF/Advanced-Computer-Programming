@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package servizi;
+
+service Funzioni
+{
+    rpc Deposita(Articolo) returns(Esito);
+    rpc Preleva(Richiesta) returns(Articolo);
+    rpc Svuota(Richiesta) returns(Esito);
+}
+
+message Articolo
+{
+    int32 id=1;
+    string prodotto=2;
+}
+
+message Esito
+{
+    string messaggio=1;
+}
+
+message Richiesta
+{
+    string messaggio=1;
+}
+

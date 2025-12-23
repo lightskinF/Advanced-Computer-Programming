@@ -1,0 +1,9 @@
+startSensor
+stopSensor
+stopSensor
+read
+startSensor
+stopSensor
+startSensor
+read
+startSensor

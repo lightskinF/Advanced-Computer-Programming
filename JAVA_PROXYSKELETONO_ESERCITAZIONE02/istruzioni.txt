@@ -1,0 +1,1 @@
+Runna prima ServerMain.java, poi ClientA (inserisce), poi ClientB(preleva).

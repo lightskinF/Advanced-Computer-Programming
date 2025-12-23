@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package servizi;
+
+
+service Funzioni
+{
+    rpc Buy(Vuoto) returns (Prodotto);
+    rpc Sell(Prodotto) returns (Ack);
+}
+
+message Prodotto
+{
+    int32 serial_number=1;
+}
+
+message Ack
+{
+    bool esito=1;
+}
+
+message Vuoto
+{
+    string messaggio=1;
+}

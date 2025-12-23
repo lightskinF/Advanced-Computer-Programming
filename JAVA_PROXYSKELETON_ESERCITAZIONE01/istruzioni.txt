@@ -1,0 +1,12 @@
+Lanciare prima il ServerMAIN, poi il ClientMAIN, poi Actuator.  Nel client ho deciso che per un thread che fa 3 richieste, le 3 richieste dello stesso thread fossero uguali.
+Infatti passo il commando generato randomicamente al thread che produce a sua volta altre tre richieste facendo upcall al servizio implementato nel PROXY e pasandogli
+lo stesso comando che a sua volta era stato passato nel CLIENTMAIN al Thread.
+
+SERVER messo a localhost e porta 8070. Si puo runnare direttamente, cosi come clientmain e actuator, direttamente su freccia in alto a destra, di fianco piccola tendina->run Java
+COSI NON DEVI RUNNARE DA TERMINALE E non hai bisogno di passare args per il port number come magari solitamente fai con python.
+
+Per stoppare actuator e server, basta premere ctrl+c. In totale saranno 15 richieste.
+I PRELIEVI FATTI DA ACTUATOR, SALVATI IN cmdlog.txt. 
+In actuator, con, try (FileWriter file = new FileWriter("cmdlog.txt", true))-> il secondo campo del costruttore di filewriter è un booleano e indica se 
+in modalita append o no: se true, modalita append, cioe non crea sempre file da zero ma continua quello che gia hai inserito, quindi è come se salvassi anche i prelievi fatti precedentemente.
+se metti false, lo crea di nuovo e riparte da zero. 

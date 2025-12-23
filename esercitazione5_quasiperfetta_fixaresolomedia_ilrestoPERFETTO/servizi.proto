@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package servizi;
+
+
+service Funzioni{
+    rpc getSensors(Empty) returns (stream Sensor);
+    rpc getMean(MeanRequest) returns (StringMessage);
+}
+
+message Empty{
+    string messaggio=1;
+}
+
+message Sensor{
+    int32 id=1;
+    string data_type=2;
+}
+
+message MeanRequest{
+    int32 sensor_id=1; 
+    string data_type=2;
+}
+
+message StringMessage{
+    float calcolo_media=1;
+}
